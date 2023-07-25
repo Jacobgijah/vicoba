@@ -1,0 +1,30 @@
+{%  extends 'admin/base.html'  %} 
+
+{% load i18n %}
+{% load static %}
+
+{% block branding %}
+<h1 id="head">
+<img src="{% static 'img/vicoba.jpeg' %}" width="35" height="35" />
+
+Vicoba Site
+</h1>
+{% endblock branding %}
+
+{% block sidebar %}
+    <div id="content-related">
+        <div class="module" id="recent-actions-module">
+            <h2 style="color:purple">{% translate 'Recent Actions' %} </h2>
+            <h3 style="color:red">{% translate 'My actions' %}</h3>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+{% block extrastyle %}
+
+<link rel="stylesheet" href="{% static 'css/adminstyle.css' %}" />
+
+{% endblock %}
+

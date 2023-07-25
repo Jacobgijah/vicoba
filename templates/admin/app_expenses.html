@@ -1,0 +1,28 @@
+{%  extends 'admin/base.html'  %} 
+
+{% load i18n %}
+{% load static %}
+
+
+{% block add-expenses %}
+
+
+<div class="submit-row">
+    <input type="submit" value="Check eligibility" class="default" name="_checkeligibility">
+    <input type="submit" value="Save" name="_save">
+    <input type="submit" value="Save and add another" name="_addanother">
+    <input type="submit" value="Save and continue editing" name="_continue">   
+</div>
+
+
+    
+{% endblock %}
+
+
+
+{% block extrastyle %}
+
+<link rel="stylesheet" href="{% static 'css/adminstyle.css' %}" />
+
+{% endblock %}
+

@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'expenses' %}">Loans</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Loan Application Form</li>
+            </ol>
+        </nav>
+        </div>
+    </nav>
+
+    
+        <div class="card mt-3">
+            <div class="card-body">
+            <form action="{% url 'add-expenses' %}" method="POST">  
+                {% include 'partials/_messages.html' %} 
+                {% csrf_token %}
+                <h4><i>Loan Details</i></h4><hr>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="">Application Date</label>
+                    <input
+                        type="date"
+                        name="expense_date"
+                        class="form-control form-control-sm"
+                        value="{{values.date}}"
+                    />
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="">Amount</label>
+                    <input 
+                        type="number"
+                        name="amount"
+                        class="form-control form-control-sm"
+                        value="{{values.amount}}"
+                    />
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="">Description</label>
+                    <input
+                        type="text"
+                        name="description"
+                        class="form-control form-control-sm"
+                        value="{{values.description}}"    
+                    />
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="">Category</label>
+                    <select class="form-control" name="category">
+                        {% for category in categories %}
+                        <option name="category" value="{{category.name}}">
+                            {{category.name}}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <h4><i>Applicant Details</i></h4><hr>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="">Age</label>
+                    <input
+                        type="number"
+                        name="age"
+                        class="form-control form-control-sm"
+                        value="{{values.age}}"
+                    />
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="">Income amount</label>
+                    <input
+                        type="number"
+                        name="income"
+                        class="form-control form-control-sm"
+                        value="{{values.income}}"
+                    />
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="">Profession</label>
+                    <input
+                        type="text"
+                        name="profession"
+                        class="form-control form-control-sm"
+                        value="{{values.profession}}"
+                    />
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="">Years of experience</label>
+                    <input
+                        type="text"
+                        name="experience"
+                        class="form-control form-control-sm"
+                        value="{{values.experience}}"
+                    />
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="">Marital Status</label>
+                    <select class="form-control" name="marital">
+                        {% for marital in maritals %}
+                        <option name="marital" value="{{marital.name}}">
+                            {{marital.name}}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="">House Ownership</label>
+                    <select class="form-control" name="house">
+                        {% for house in houses %}
+                        <option name="house" value="{{house.name}}">
+                            {{house.name}}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="">Car Ownership</label>
+                    <select class="form-control" name="car">
+                        {% for car in cars %}
+                        <option name="car" value="{{car.name}}">
+                            {{car.name}}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>             
+                
+                <input type="submit" value="Submit" class="btn btn-primary btn-primary-sm float-right" />
+            </form>
+            </div>
+        </div>
+    
+
+</div>
+
+{% endblock content %}

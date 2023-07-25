@@ -1,0 +1,43 @@
+#header {
+    background: rgb(0, 62, 69);
+    color: #ffffff;
+}
+
+#branding h1 {
+    color: #ffffff;
+}
+
+div.breadcrumbs {
+    background: rgb(61, 88, 106);
+    color: #ffffff;
+
+}
+
+.login .submit-row {
+    text-align: left !important;
+}
+
+input[type=submit],
+input[type=button],
+.submit-row input {
+    width: 100%;
+    background: rgb(0, 62, 69);
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+    background: rgb(0, 62, 69);
+}
+
+.dashboard #content {
+    width: 900px;
+}
+
+#toolbar {
+    text-align: right !important;
+}
+
+#toolbar form input[type="submit"] {
+    width: auto;
+}

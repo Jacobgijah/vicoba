@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="container mt-4"> 
+    {% include "partials/_messages.html" %}
+{% comment %} <div class="row">
+    <div class="col-md-12">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">My Dashboard</li>
+                </ol>
+              </nav>
+            </div>
+        </nav>
+    </div>
+    
+      
+  </div>
+
+</div> {% endcomment %}
+
+{% if request.user.is_authenticated %}
+
+<main id="main" class="main">
+  <div class="pagetitle">
+
+      {% comment %} <div class="row">
+          <div class="col-lg-10">
+              <h1>Profile</h1>
+              
+          </div>
+
+      </div> {% endcomment %}
+
+
+  </div><!-- End Page Title -->
+
+<section class="section profile mt-2">
+  <div class="row">
+      <div class="col-lg-12">
+
+          <div class="card">
+              <div class="card-body pt-3">
+                  <!-- Bordered Tabs -->
+                  <ul class="nav nav-tabs nav-tabs-bordered">
+
+                      <li class="nav-item">
+                          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
+                      </li>
+
+                  </ul>
+                    <div class="tab-content pt-2">
+
+                      <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                          
+                          <h5 class="card-title">Profile Details</h5>
+
+                          <div class="row">
+                              <div class="col-lg-3 col-md-4 label ">User Name</div>
+                              <div class="col-lg-9 col-md-8">{{ user.username }}</div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-lg-3 col-md-4 label">Email</div>
+                              <div class="col-lg-9 col-md-8">{{ user.email }}</div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-lg-3 col-md-4 label">Gender</div>
+                              <div class="col-lg-9 col-md-8"></div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-lg-3 col-md-4 label">Date of Birth</div>
+                              <div class="col-lg-9 col-md-8">01-Jan-1970</div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-lg-3 col-md-4 label">Country</div>
+                              <div class="col-lg-9 col-md-8"></div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-lg-3 col-md-4 label">Marital Status</div>
+                              <div class="col-lg-9 col-md-8"></div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-lg-3 col-md-4 label">Disability</div>
+                              <div class="col-lg-9 col-md-8"></div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-lg-3 col-md-4 label">Employement Status</div>
+                              <div class="col-lg-9 col-md-8"></div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-lg-3 col-md-4 label">Place of Birth</div>
+                              <div class="col-lg-9 col-md-8"></div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-lg-3 col-md-4 label">Current Place</div>
+                              <div class="col-lg-9 col-md-8"></div>
+                          </div>
+
+                      </div>
+                    </div>
+    </div>
+  </section>
+</main>
+
+  {% endif %}
+
+
+
+
+{% comment %} <script src="{% static 'js/searchExpenses.js' %}"></script> {% endcomment %}
+
+{% endblock content %}
